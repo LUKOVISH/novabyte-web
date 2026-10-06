@@ -99,3 +99,12 @@ nav a:not(.cta){display:none}
 .svc li{grid-template-columns:1fr;gap:6px}
 .btn.ghost{margin:12px 0 0}
 }
+.sec .contact{width:100%}
+.c-card{display:block;text-decoration:none;border:1.5px solid var(--line);border-radius:8px;padding:20px 22px;margin-bottom:16px;background:var(--bg);transition:border-color .2s}
+.c-card:hover{border-color:var(--blue)}
+.c-card strong{display:block;color:var(--mute);font-size:14px;font-weight:600}
+.c-card span{display:block;font-size:21px;font-weight:700;margin:2px 0 6px;overflow-wrap:anywhere}
+.c-card em{font-style:normal;color:var(--blue);font-weight:600;font-size:15px}
+.status{font-weight:600;color:#1e7a46}
+.status.error{color:#b3261e}
+.c-text{color:var(--mute);margin-bottom:18px}

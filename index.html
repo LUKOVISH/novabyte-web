@@ -10,6 +10,8 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="img/LOGO.png">
 <meta name="theme-color" content="#07193a">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/favicon.png">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -40,7 +42,6 @@
 <li><h3>Automatización</h3><p>Automatización de procesos tecnológicos para mejorar la productividad.</p></li>
 </ul>
 </div></section>
-
 
 <section id="proceso" class="sec alt"><div class="wrap">
 <h2>Cómo trabajamos</h2>
@@ -87,26 +88,30 @@
 </div>
 </div></section>
 
-<section id="contacto" class="sec"><div class="wrap contact">
+<section id="contacto" class="sec"><div class="wrap">
+<h2>Contáctanos</h2>
+<p class="lead">¿Tienes una consulta? Déjanos tu mensaje y te responderemos lo antes posible.</p>
+<div class="contact">
 <div class="c-info">
-<h2>¿Tu empresa tiene problemas tecnológicos?</h2>
-<p>Cuéntanos qué pasa. Hacemos un diagnóstico y te recomendamos una solución.</p>
-<a href="#" class="btn wa-link">Escribir por WhatsApp</a>
+<p class="c-text">Completa el formulario con tu consulta. También puedes escribirnos directamente a nuestro correo:</p>
+<a class="c-card" href="mailto:contacto.ialtech@gmail.com"><strong>Correo</strong><span>contacto.ialtech@gmail.com</span><em>Enviar correo</em></a>
 </div>
-<form id="form-diag" class="form" novalidate>
+<form id="form-mail" class="form" action="https://formsubmit.co/contacto.ialtech@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 <label>Nombre<input name="nombre" required autocomplete="name"></label>
-<label>Empresa<input name="empresa" autocomplete="organization"></label>
-<label>Teléfono<input name="telefono" type="tel" required autocomplete="tel"></label>
-<label>¿Qué problema tienes?<textarea name="problema" rows="4" required></textarea></label>
-<button type="submit" class="btn">Solicitar diagnóstico</button>
-<p class="note">Se abrirá WhatsApp con tu mensaje listo para enviar.</p>
-<p id="form-error" class="err" role="alert" hidden>Completa nombre, teléfono y el problema.</p>
+<label>Tu correo<input name="email" type="email" required autocomplete="email"></label>
+<label>Asunto<input name="_subject" required></label>
+<label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
+<button type="submit" class="btn">Enviar correo</button>
+<p id="form-status" class="status" role="status" hidden></p>
 </form>
+</div>
 </div></section>
-</main>
 
 <footer><div class="wrap"><img src="img/NOMBRE.png" alt="Nova Byte Technologies"><span>© 2026 Nova Byte Technologies</span></div></footer>
+<a href="https://wa.me/51980710018?text=Hola%2C%20quiero%20un%20diagn%C3%B3stico%20tecnol%C3%B3gico%20para%20mi%20empresa." target="_blank" rel="noopener" class="wa-float wa-link" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 3.9 3.5 1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 <script src="script.js"></script>
-<a href="#" class="wa-float wa-link" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2.1-.1 0-.3 0-.4l-.7-1.6c-.2-.4-.4-.4-.5-.4h-.4a.8.8 0 0 0-.6.3 2.5 2.5 0 0 0-.8 1.9c0 1.1.8 2.2.9 2.3.1.2 1.6 2.5 3.9 3.5 1.4.6 2 .6 2.7.5.4-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.5-.3z"/></svg></a>
 </body>
 </html>

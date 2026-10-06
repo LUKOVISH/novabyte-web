@@ -1,10 +1,6 @@
-
-// Poner numero 
 const WHATSAPP_NUMBER = "51980710018";
 
-
 const wa = (msg) => "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
-
 
 document.querySelectorAll(".wa-link").forEach((a) => {
   a.href = wa("Hola, quiero un diagnóstico tecnológico para mi empresa.");
@@ -12,19 +8,33 @@ document.querySelectorAll(".wa-link").forEach((a) => {
   a.rel = "noopener";
 });
 
+// Formulario de correo -> se envía automáticamente a contacto.ialtech@gmail.com
+const formMail = document.getElementById("form-mail");
+if (formMail) {
+  formMail.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    const btn = formMail.querySelector("button");
+    status.hidden = false; status.className = "status"; status.textContent = "Enviando...";
+    btn.disabled = true;
+    try {
+      const r = await fetch("https://formsubmit.co/ajax/contacto.ialtech@gmail.com", {
+        method: "POST", headers: { Accept: "application/json" }, body: new FormData(formMail)
+      });
+      const d = await r.json();
+      if (r.ok && (d.success === true || d.success === "true")) {
+        status.textContent = "Mensaje enviado. Te responderemos pronto.";
+        formMail.reset();
+      } else { throw new Error(d.message || "error"); }
+    } catch (err) {
+      status.className = "status error";
+      status.textContent = "No se pudo enviar. Escríbenos por WhatsApp o a contacto.ialtech@gmail.com";
+    }
+    btn.disabled = false;
+  });
+}
 
-document.getElementById("form-diag").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const f = e.target, d = Object.fromEntries(new FormData(f));
-  const err = document.getElementById("form-error");
-  if (!d.nombre.trim() || !d.telefono.trim() || !d.problema.trim()) { err.hidden = false; return; }
-  err.hidden = true;
-  const msg = "Hola, soy " + d.nombre.trim() + (d.empresa.trim() ? " de " + d.empresa.trim() : "") +
-    ".\nTeléfono: " + d.telefono.trim() + "\nProblema: " + d.problema.trim();
-  window.open(wa(msg), "_blank", "noopener");
-});
-
-
+// Autoevaluación de seguridad
 const preguntas = [
   "¿Hacen copias de seguridad de la información importante al menos una vez por semana?",
   "¿Usan contraseñas distintas para cada cuenta de trabajo?",
